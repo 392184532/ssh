@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IP</title>
+	<script type="text/javascript">
+	 /* 封装ajax函数
+   * @param {string}opt.type http连接的方式，包括POST和GET两种方式
+   * @param {string}opt.url 发送请求的url
+   * @param {boolean}opt.async 是否为异步请求，true为异步的，false为同步的
+   * @param {object}opt.data 发送的参数，格式为对象类型
+   * @param {function}opt.success ajax发送并接收成功调用的回调函数
+   */
+      function ajax(opt) {
+          opt = opt || {};
+         opt.method = opt.method.toUpperCase() || 'POST';
+         opt.url = opt.url || '';
+         opt.async = opt.async || true;
+         opt.data = opt.data || null;
+         opt.success = opt.success || function () {};
+         var xmlHttp = null;
+         if (XMLHttpRequest) {
+             xmlHttp = new XMLHttpRequest();
+         }
+         else {
+             xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+         }var params = [];
+         for (var key in opt.data){
+             params.push(key + '=' + opt.data[key]);
+         }
+         var postData = params.join('&');
+         if (opt.method.toUpperCase() === 'POST') {
+             xmlHttp.open(opt.method, opt.url, opt.async);
+             xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+             xmlHttp.send(postData);
+         }
+         else if (opt.method.toUpperCase() === 'GET') {
+             xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+             xmlHttp.send(null);
+         } 
+         xmlHttp.onreadystatechange = function () {
+             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                 opt.success(xmlHttp.responseText);
+             }
+         };
+     }
+	</script> 
+</head>
+<body>
+<script type="text/javascript">
+ajax({
+    method: 'GET',
+    url: 'ssh_cli1.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl1.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+
+ajax({
+    method: 'GET',
+    url: 'ssh_cli10.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl10.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+</script> 
+<script type="text/javascript">
+ajax({
+    method: 'GET',
+    url: 'ssh_cli2.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl2.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+
+ajax({
+    method: 'GET',
+    url: 'ssh_cli9.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl9.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+</script> 
+<script type="text/javascript">
+ajax({
+    method: 'GET',
+    url: 'ssh_cli3.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl3.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+
+ajax({
+    method: 'GET',
+    url: 'ssh_cli8.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl8.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+</script> 
+<script type="text/javascript">
+ajax({
+    method: 'GET',
+    url: 'ssh_cli4.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl4.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+
+ajax({
+    method: 'GET',
+    url: 'ssh_cli7.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl7.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+</script> 
+<script type="text/javascript">
+ajax({
+    method: 'GET',
+    url: 'ssh_cli5.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl5.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	         		if(response1.length>2){
+						 console.log(response1);
+	      			}
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+
+ajax({
+    method: 'GET',
+    url: 'ssh_cli6.php',
+    success: function (response) {
+    	if(response.length >1){
+    		ajax({
+	      		method: 'POST',
+	      		url:'http://localhost:88/ssh/cl6.php',
+	      		data: {
+	          	name: response,
+	      		},
+	      		success: function (response1) {
+	      			if(response1.length>2){
+						 console.log(response1);
+	      			}	
+	     		}
+	 		});
+    	}
+      	
+    console.log(response);
+    // console.log(response);
+    }
+ });
+</script> 
+
+<!--img id="b" src="ssh_cli2.php"> 
++b.text()+c.text()+d.text()+e.text()+f.text()+g.text()+h.text()+i.text()+j.text()
+<img id="c" src="ssh_cli3.php">
+<img id="d" src="ssh_cli4.php">
+<img id="e" src="ssh_cli5.php">
+<img id="f" src="ssh_cli6.php">
+<img id="g" src="ssh_cli7.php">
+<img id="h" src="ssh_cli8.php">
+<img id="i" src="ssh_cli9.php">
+<img id="j" src="ssh_cli10.php"-->
+</body>
+</html>
